@@ -1,7 +1,7 @@
 steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
-    id: 'do deploying'
+    id: 'do deploying sample_http'
     args:
       - functions
       - deploy
@@ -9,22 +9,22 @@ steps:
       - --trriger-http
       - --region=asia-northeast1
       - --allow-unauthenticated
-      - --source=./src/
+      - --source=./src/sample_http
       - --runtime=python37
       - --env-vars-file=./extras/functions_env_vars.yaml
 
-  - name: 'gcr.io/cloud-builders/gcloud'
-    id: 'do deploying'
-    args:
-      - functions
-      - deploy
-      - sample_http
-      - --trriger-http
-      - --region=asia-northeast1
-      - --allow-unauthenticated
-      - --source=./src/
-      - --runtime=python37
-      - --env-vars-file=./extras/functions_env_vars.yaml
+#  - name: 'gcr.io/cloud-builders/gcloud'
+#    id: 'do deploying sample'
+#    args:
+#      - functions
+#      - deploy
+#      - sample_pubsub
+#      - --trriger-topic=${PUBSUB_TOPIC}
+#      - --region=asia-northeast1
+#      - --allow-unauthenticated
+#      - --source=./src/sample_pubsub
+#      - --runtime=python37
+#      - --env-vars-file=./extras/functions_env_vars.yaml
 
 
 #  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
