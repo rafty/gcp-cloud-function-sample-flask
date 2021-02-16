@@ -6,7 +6,7 @@ steps:
       - functions
       - deploy
       - sample_http
-      - --trriger-http
+      - --trigger-http
       - --region=asia-northeast1
       - --allow-unauthenticated
       - --source=./src/sample_http
